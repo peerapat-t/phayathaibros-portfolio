@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "IBM Plex Sans Thai", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", "IBM Plex Sans Thai", ui-sans-serif, sans-serif;
+  --color-accent: #a3e635;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-zinc-950 text-zinc-100 antialiased;
+}
