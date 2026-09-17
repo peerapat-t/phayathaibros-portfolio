@@ -6,3 +6,6 @@ dist
 Dockerfile
 .dockerignore
 *.log
+compose.yaml
+compose.yml
+docker-compose.yml

@@ -1,0 +1,8 @@
+services:
+  web:
+    build: .
+    image: phayathaibros-portfolio
+    container_name: phayathaibros-portfolio
+    ports:
+      - "8080:80"
+    restart: unless-stopped
