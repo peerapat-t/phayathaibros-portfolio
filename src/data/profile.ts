@@ -15,7 +15,7 @@ export const profile = {
   bio: [
     "Economics for my bachelor's and master's degrees, then a second master's in business data science and a lot of AI training since. The economics part is probably why I start from the business question.",
     "I started out as a researcher at TDRI doing spatial analysis for transport policy, and later joined Kasikorn Asset Management, where I moved from marketing analytics into data science and now work on the company's AI transformation.",
-    "Working in asset management also means I have picked up a fair bit about the products themselves: mutual funds, provident funds, equities and the tax-saving funds people buy at the end of the year. It helps when the data question is really a product question.",
+    "Working in asset management also means I have picked up a fair bit about the products themselves: mutual funds, provident funds, private funds, equities and the tax-saving funds people buy at the end of the year. It helps when the data question is really a product question.",
     "I'm currently studying for an M.Sc. in Business Data Science at KMITL, looking at recommender systems for financial assets. On the side I build small projects, mostly as an excuse to learn how to get a model out of a notebook and in front of someone.",
   ],
   interests: [
@@ -42,7 +42,7 @@ export const skills: Skill[] = [
   {
     group: "Financial Products",
     icon: "fund",
-    items: ["Mutual Funds", "Provident Funds", "Equities", "Tax-saving Funds (SSF/RMF)", "Asset Allocation"],
+    items: ["Mutual Funds", "Provident Funds", "Private Funds", "Equities", "Tax-saving Funds (SSF/RMF)", "Asset Allocation"],
   },
   { group: "Web & Delivery", icon: "code", items: ["TypeScript", "React", "Vite", "Tailwind CSS", "Docker"] },
 ];
@@ -78,7 +78,7 @@ export const experiences: Experience[] = [
     role: "Manager, Corporate Strategy — Data Scientist",
     period: "2022 — 2025",
     location: "Bangkok",
-    summary: "Built models and dashboards for the sales and marketing teams on mutual funds and provident funds.",
+    summary: "Built models and dashboards for the sales and marketing teams across mutual funds, provident funds and private funds.",
     achievements: [
       {
         text: "Social Listening Dashboard that uses web scraping and an LLM API to track customer sentiment and needs on our Facebook page",
