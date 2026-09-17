@@ -3,8 +3,9 @@ import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { profile } from "../data/profile";
 
 const navItems = [
-  { to: "/", label: "Top Projects", end: true },
-  { to: "/projects", label: "Browse", end: false },
+  { to: "/", label: "Home", end: true },
+  { to: "/projects", label: "Projects", end: false },
+  { to: "/blog", label: "Blog", end: false },
   { to: "/about", label: "About", end: false },
 ];
 
@@ -25,10 +26,13 @@ export default function Layout() {
   return (
     <div className="flex min-h-screen flex-col">
       <header className="sticky top-0 z-50 border-b border-zinc-800/80 bg-zinc-950/80 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-          <Link to="/" className="flex items-center gap-2 font-display text-lg font-bold">
-            <span className="grid h-8 w-8 place-items-center rounded-lg bg-accent text-zinc-950">P</span>
-            <span>{profile.name}</span>
+        <div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-4">
+          <Link to="/" className="flex items-center gap-2 font-display text-base font-bold sm:text-lg">
+            <span className="grid h-8 w-8 place-items-center rounded-lg bg-accent text-sm text-zinc-950">PB</span>
+            <span className="leading-tight">
+              {profile.siteName}
+              <span className="block text-[11px] font-medium text-zinc-500">{profile.siteTagline}</span>
+            </span>
           </Link>
 
           <nav className="hidden items-center gap-1 sm:flex">
@@ -68,8 +72,10 @@ export default function Layout() {
       </main>
 
       <footer className="border-t border-zinc-800">
-        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-8 text-sm text-zinc-500 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} {profile.name} · Built with React, TypeScript & Tailwind CSS</p>
+        <div className="mx-auto flex max-w-5xl flex-col gap-4 px-5 py-8 text-sm text-zinc-500 sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            © {new Date().getFullYear()} {profile.siteName} · {profile.name}
+          </p>
           <div className="flex gap-5">
             {profile.socials.map((s) => (
               <a key={s.label} href={s.href} className="hover:text-zinc-100">

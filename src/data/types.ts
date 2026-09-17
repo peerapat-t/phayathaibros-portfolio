@@ -25,7 +25,7 @@ export interface Experience {
   period: string;
   location: string;
   summary: string;
-  achievements: { text: string; stack: string[] }[];
+  achievements: { text: string; stack?: string[] }[];
 }
 
 export interface Education {
@@ -37,7 +37,17 @@ export interface Education {
   image?: { src: string; credit: string; creditUrl: string };
 }
 
-export type BadgeIcon = "trophy" | "medal" | "star" | "course" | "listening" | "chart" | "network" | "sparkle" | "code";
+export type BadgeIcon =
+  | "trophy"
+  | "medal"
+  | "star"
+  | "course"
+  | "listening"
+  | "chart"
+  | "network"
+  | "sparkle"
+  | "code"
+  | "fund";
 
 export interface Skill {
   group: string;
@@ -50,4 +60,17 @@ export interface Award {
   issuer: string;
   kind: "Award" | "Hackathon" | "Training";
   icon: BadgeIcon;
+  /** Optional photo (certificate, trophy, event) in public/images/awards/ */
+  image?: { src: string; caption?: string };
+}
+
+export interface Article {
+  slug: string;
+  title: string;
+  excerpt: string;
+  /** ISO date, e.g. "2026-08-24" */
+  date: string;
+  readingMinutes: number;
+  tags: string[];
+  emoji: string;
 }

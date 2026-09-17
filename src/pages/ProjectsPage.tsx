@@ -41,10 +41,10 @@ export default function ProjectsPage() {
     }`;
 
   return (
-    <div className="mx-auto max-w-6xl px-5 py-14">
+    <div className="mx-auto max-w-5xl px-5 py-14">
       <header className="mb-10">
-        <h1 className="font-display text-4xl font-bold sm:text-5xl">Browse Projects</h1>
-        <p className="mt-3 text-zinc-400">All {projects.length} projects. Search, or filter by category or technology.</p>
+        <h1 className="font-display text-4xl font-bold sm:text-5xl">Things I've built</h1>
+        <p className="mt-3 text-zinc-400">A few things I've put together. Search, or filter by category or technology.</p>
       </header>
 
       {/* Controls */}

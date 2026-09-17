@@ -6,7 +6,7 @@ import ProjectCover from "./ProjectCover";
 import Tag from "./Tag";
 
 /**
- * Shared shell for a project page. Each page in src/pages/projects/ passes its slug
+ * Shared shell for a project page. Each page in src/pages/app_page/ passes its slug
  * and its own content as children, which appear below the highlights.
  */
 export default function ProjectDetail({ slug, children }: { slug: string; children?: ReactNode }) {

@@ -1,22 +1,28 @@
 import type { Award, Education, Experience, Skill } from "./types";
 
 export const profile = {
-  name: "Peerapat T.",
+  name: "Peerapat Tancharoen",
   nameShort: "Peerapat",
-  title: "Data Scientist",
+  siteName: "Phayathai Bros",
+  siteTagline: "Peerapat's Interests",
+  title: "Data Scientist / AI Engineer",
   location: "Phayathai, Bangkok",
   email: "peerapat.tcr@gmail.com",
+  lead: "I care more about the decision at the end than the model in the middle.",
   intro:
-    "I work with data in asset management by day, and build small web apps and games on the side. This is where I share the things I make for fun.",
+    "Most of my work starts with a business question — who the sales team should call, what customers actually respond to, which process is quietly eating everyone's afternoon — and works backwards to the data. These days that often means putting an LLM somewhere in the middle of it.",
+  interestsLabel: "A few things I'm into at the moment:",
   bio: [
-    "I studied economics for both my bachelor's and master's degrees, so I like to start from the business problem before touching the data.",
-    "I began my career as a researcher at TDRI, working on spatial analysis for transport policy. I then joined the Corporate Strategy team at Kasikorn Asset Management, where I build dashboards, predictive models and customer segmentation for the sales and marketing teams.",
-    "I'm now studying for an M.Sc. in Business Data Science at KMITL on a KMITL & KBTG scholarship. In my spare time I build web apps to learn how to turn ideas and models into things people can use.",
+    "I studied economics for both my bachelor's and master's degrees, which is probably why I tend to start from the business question before opening a notebook.",
+    "I started out as a researcher at TDRI doing spatial analysis for transport policy, and later joined Kasikorn Asset Management, where I moved from marketing analytics into data science and now work on the company's AI transformation.",
+    "Working in asset management also means I have picked up a fair bit about the products themselves: mutual funds, provident funds, equities and the tax-saving funds people buy at the end of the year. It helps when the data question is really a product question.",
+    "I'm currently studying for an M.Sc. in Business Data Science at KMITL, looking at recommender systems for financial assets. On the side I build small projects, mostly as an excuse to learn how to get a model out of a notebook and in front of someone.",
   ],
-  stats: [
-    { label: "Years working with data", value: "6+" },
-    { label: "Side projects", value: "4" },
-    { label: "Awards & hackathons", value: "3" },
+  interests: [
+    "Applying analytics, machine learning and AI to marketing",
+    "Building web applications and using AI to solve real-life problems",
+    "Social listening — what people are actually saying online",
+    "Public transportation and how people move around a city",
   ],
   socials: [
     { label: "GitHub", href: "https://github.com/peerapat-t" },
@@ -29,26 +35,47 @@ export const skills: Skill[] = [
   { group: "Data & Analytics", icon: "chart", items: ["SQL", "Python", "pandas", "Power BI", "QGIS"] },
   { group: "Machine Learning", icon: "network", items: ["scikit-learn", "LightGBM", "K-Means", "Decision Tree", "Matrix Factorization"] },
   { group: "LLM & Automation", icon: "sparkle", items: ["LLM API", "Web Scraping", "Selenium"] },
-  { group: "Web Dev (learning)", icon: "code", items: ["TypeScript", "React", "Vite", "Tailwind CSS", "Docker"] },
+  {
+    group: "Financial Products",
+    icon: "fund",
+    items: ["Mutual Funds", "Provident Funds", "Equities", "Tax-saving Funds (SSF/RMF)", "Asset Allocation"],
+  },
+  { group: "Web & Delivery", icon: "code", items: ["TypeScript", "React", "Vite", "Tailwind CSS", "Docker"] },
 ];
 
 export const experiences: Experience[] = [
   {
     company: "Kasikorn Asset Management",
-    role: "Manager, Corporate Strategy",
-    period: "Jul 2020 — Present",
+    role: "Senior Manager, Corporate Strategy — Process Improvement Engineer / Data Scientist",
+    period: "2025 — Present",
     location: "Bangkok",
     summary:
-      "Apply data analytics and machine learning to improve customer experience, sales and marketing for mutual funds and provident funds.",
+      "Work on the company's AI transformation, turning internal processes into something an LLM can help with. One AI engineer reports to me.",
     achievements: [
       {
-        text: "Customer Tracking Dashboard that combines data from multiple products so the sales team can follow customers in real time",
-        stack: ["SQL", "Python", "Power BI"],
+        text: "Co-lead of the AI transformation project, covering tech stack selection, project feasibility and governance",
       },
       {
-        text: "In-depth analyses of mutual fund and provident fund topics to tailor communication and marketing strategies",
-        stack: ["SQL", "Python", "Power BI"],
+        text: "Automated the KYC process: AI that checks the background of new account openings and summarises the customer risk profile",
+        stack: ["LLM", "Python"],
       },
+      {
+        text: "AI email drafter for the call centre, built with the Salesforce team and integrated into the existing CRM",
+        stack: ["LLM", "Python", "SQL", "Salesforce"],
+      },
+      {
+        text: "Document OCR checker and reconciliation tool that reads and cross-checks customer documents for the call centre team",
+        stack: ["LLM", "VLM", "Python"],
+      },
+    ],
+  },
+  {
+    company: "Kasikorn Asset Management",
+    role: "Manager, Corporate Strategy — Data Scientist",
+    period: "2022 — 2025",
+    location: "Bangkok",
+    summary: "Built models and dashboards for the sales and marketing teams on mutual funds and provident funds.",
+    achievements: [
       {
         text: "Social Listening Dashboard that uses web scraping and an LLM API to track customer sentiment and needs",
         stack: ["Python", "Selenium", "LLM API", "Power BI"],
@@ -61,6 +88,28 @@ export const experiences: Experience[] = [
         text: "Clustering model for customer segmentation based on behaviour, preferences and purchasing patterns",
         stack: ["SQL", "Python", "K-Means"],
       },
+      {
+        text: "Business financial tracking for fees, expenses and revenue across products",
+        stack: ["SQL", "Python", "Power BI"],
+      },
+    ],
+  },
+  {
+    company: "Kasikorn Asset Management",
+    role: "Officer, Digital Marketing Strategy — Data Analyst / Business Intelligence",
+    period: "Jul 2020 — 2022",
+    location: "Bangkok",
+    summary:
+      "Worked closely with the marketing teams — digital marketing, the RM team and mass marketing — on reporting and customer analysis.",
+    achievements: [
+      {
+        text: "Customer Tracking Dashboard that combines data from multiple products so the sales team can follow customers in real time",
+        stack: ["SQL", "Python", "Power BI"],
+      },
+      {
+        text: "In-depth analyses of mutual fund, provident fund and private fund topics to tailor communication and marketing strategies",
+        stack: ["SQL", "Python", "Power BI"],
+      },
     ],
   },
   {
@@ -68,7 +117,7 @@ export const experiences: Experience[] = [
     role: "Researcher",
     period: "Nov 2018 — Jun 2022",
     location: "Bangkok",
-    summary: "Public policy research with a focus on spatial data analysis.",
+    summary: "Public policy research, mostly spatial data analysis.",
     achievements: [
       { text: "Analysed bus accessibility across Thailand using spatial data", stack: ["Python", "QGIS"] },
     ],

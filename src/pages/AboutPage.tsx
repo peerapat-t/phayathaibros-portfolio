@@ -24,12 +24,6 @@ export default function AboutPage() {
             >
               Contact me
             </a>
-            <a
-              href="#"
-              className="rounded-full border border-zinc-700 px-5 py-2 text-sm font-semibold hover:border-zinc-400"
-            >
-              Download résumé (PDF)
-            </a>
           </div>
         </div>
       </section>
@@ -46,7 +40,7 @@ export default function AboutPage() {
         <h2 className="mb-8 font-display text-2xl font-bold sm:text-3xl">Work Experience</h2>
         <ol className="relative space-y-10 border-l border-zinc-800 pl-8">
           {experiences.map((exp) => (
-            <li key={exp.company} className="relative">
+            <li key={`${exp.company}-${exp.role}`} className="relative">
               <span className="absolute top-1.5 -left-[37px] h-3 w-3 rounded-full border-2 border-zinc-950 bg-accent" />
               <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
                 <h3 className="font-display text-xl font-semibold">
@@ -62,12 +56,14 @@ export default function AboutPage() {
                     <span className="text-accent">▸</span>
                     <div>
                       <p>{a.text}</p>
-                      <div className="mt-2 flex flex-wrap items-center gap-1.5">
-                        <span className="mr-1 text-xs tracking-widest text-zinc-500 uppercase">Stack</span>
-                        {a.stack.map((s) => (
-                          <Tag key={s}>{s}</Tag>
-                        ))}
-                      </div>
+                      {a.stack && a.stack.length > 0 && (
+                        <div className="mt-2 flex flex-wrap items-center gap-1.5">
+                          <span className="mr-1 text-xs tracking-widest text-zinc-500 uppercase">Stack</span>
+                          {a.stack.map((s) => (
+                            <Tag key={s}>{s}</Tag>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   </li>
                 ))}
@@ -138,16 +134,22 @@ export default function AboutPage() {
       {/* Awards & training */}
       <section className="mt-16">
         <h2 className="mb-6 font-display text-2xl font-bold sm:text-3xl">Awards & Training</h2>
-        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {awards.map((a) => (
             <li
               key={a.title}
-              className="flex items-center gap-4 rounded-2xl border border-zinc-800 bg-zinc-900/50 p-4 transition hover:border-zinc-600"
+              className="flex flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/50 transition hover:border-zinc-600"
             >
-              <Badge icon={a.icon} className="h-14 w-14 shrink-0 drop-shadow-lg" />
-              <div>
+              {a.image ? (
+                <img src={a.image.src} alt={a.image.caption ?? a.title} loading="lazy" className="aspect-[4/3] w-full object-cover" />
+              ) : (
+                <div className="grid aspect-[4/3] w-full place-items-center bg-zinc-900">
+                  <Badge icon={a.icon} className="h-20 w-20 drop-shadow-lg" />
+                </div>
+              )}
+              <div className="flex flex-1 flex-col p-5">
                 <p className="text-[11px] tracking-widest text-zinc-500 uppercase">{a.kind}</p>
-                <h3 className="font-semibold leading-snug">{a.title}</h3>
+                <h3 className="mt-1 font-display text-lg font-semibold leading-snug">{a.title}</h3>
                 <p className="text-sm text-zinc-400">{a.issuer}</p>
               </div>
             </li>

@@ -9,7 +9,7 @@ export const projects: Project[] = [
     title: "Chick n Cow",
     tagline: "A picture-reading game for young kids",
     description:
-      "A browser game that helps kids practise reading pictures out loud. Cards flash on screen across 10 levels that get faster as you go, and parents can build their own card deck with photos and recorded voices.",
+      "A small browser game I made so my kid could practise reading pictures out loud. Cards flash on screen across 10 levels that get faster as you go, and you can build your own deck with your own photos and recorded voices.",
     category: "Game",
     tags: ["TypeScript", "Vite", "Tailwind CSS", "Web Audio API", "REST API"],
     year: 2026,
@@ -19,7 +19,7 @@ export const projects: Project[] = [
     emoji: "🐔🐄",
     highlights: [
       "10 levels with game speed and background music tempo increasing per level",
-      "Card editor: upload an image and record the word in the browser, with automatic silence trimming",
+      "Card editor: upload an image and record the word in the browser, with the silence trimmed off automatically",
       "Drag-and-drop level builder to choose which cards appear in each level",
       "Play history with stats, plus light / dark / system themes",
     ],

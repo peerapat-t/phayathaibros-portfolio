@@ -11,6 +11,7 @@ const palettes: Record<BadgeIcon, [string, string]> = {
   network: ["#fdba74", "#ea580c"],
   sparkle: ["#f0abfc", "#9333ea"],
   code: ["#bef264", "#16a34a"],
+  fund: ["#fcd34d", "#0f766e"],
 };
 
 const glyphs: Record<BadgeIcon, ReactNode> = {
@@ -67,6 +68,13 @@ const glyphs: Record<BadgeIcon, ReactNode> = {
     </>
   ),
   code: <path d="M25 22l-9 10 9 10M39 22l9 10-9 10M35 18l-6 28" fill="none" />,
+  fund: (
+    <>
+      <path d="M17 42l9-9 6 5 8-11 7 6" fill="none" />
+      <path d="M17 20v28h30" fill="none" />
+      <circle cx="47" cy="19" r="5" />
+    </>
+  ),
 };
 
 /** Generated badge artwork for skills, awards and courses (not an official logo). */

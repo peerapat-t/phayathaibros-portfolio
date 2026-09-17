@@ -7,9 +7,9 @@ export default function ProjectCard({ project }: { project: Project }) {
   return (
     <Link
       to={`/projects/${project.slug}`}
-      className="group flex flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/50 transition hover:-translate-y-1 hover:border-zinc-600"
+      className="group flex flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/50 transition hover:border-zinc-600"
     >
-      <ProjectCover project={project} className="aspect-[16/10]" />
+      <ProjectCover project={project} className="aspect-[2/1]" />
       <div className="flex flex-1 flex-col gap-3 p-5">
         <div className="flex items-center justify-between text-xs text-zinc-500">
           <span>{project.category}</span>
