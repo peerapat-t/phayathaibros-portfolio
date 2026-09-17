@@ -93,6 +93,10 @@ export const experiences: Experience[] = [
         stack: ["SQL", "Python", "K-Means"],
       },
       {
+        text: "Network analysis of how customers move between funds, used to suggest the next fund to offer them",
+        stack: ["Python", "NetworkX"],
+      },
+      {
         text: "Business financial tracking for fees, expenses and revenue across products",
         stack: ["SQL", "Python", "Power BI"],
       },
