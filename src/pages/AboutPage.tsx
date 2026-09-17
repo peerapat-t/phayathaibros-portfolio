@@ -1,4 +1,6 @@
-import { certifications, education, experiences, profile, skills } from "../data/profile";
+import Badge from "../components/Badge";
+import Tag from "../components/Tag";
+import { awards, education, experiences, profile, skills } from "../data/profile";
 
 export default function AboutPage() {
   return (
@@ -20,13 +22,13 @@ export default function AboutPage() {
               href={`mailto:${profile.email}`}
               className="rounded-full bg-accent px-5 py-2 text-sm font-semibold text-zinc-950 hover:brightness-110"
             >
-              ติดต่อผม
+              Contact me
             </a>
             <a
               href="#"
               className="rounded-full border border-zinc-700 px-5 py-2 text-sm font-semibold hover:border-zinc-400"
             >
-              ดาวน์โหลด Resume (PDF)
+              Download résumé (PDF)
             </a>
           </div>
         </div>
@@ -41,7 +43,7 @@ export default function AboutPage() {
 
       {/* Experience timeline */}
       <section className="mt-16">
-        <h2 className="mb-8 font-display text-2xl font-bold sm:text-3xl">ประสบการณ์ทำงาน</h2>
+        <h2 className="mb-8 font-display text-2xl font-bold sm:text-3xl">Work Experience</h2>
         <ol className="relative space-y-10 border-l border-zinc-800 pl-8">
           {experiences.map((exp) => (
             <li key={exp.company} className="relative">
@@ -54,11 +56,19 @@ export default function AboutPage() {
               </div>
               <p className="text-sm text-zinc-500">{exp.location}</p>
               <p className="mt-2 text-zinc-300">{exp.summary}</p>
-              <ul className="mt-3 space-y-1.5">
+              <ul className="mt-4 space-y-4">
                 {exp.achievements.map((a) => (
-                  <li key={a} className="flex gap-3 text-sm text-zinc-400">
+                  <li key={a.text} className="flex gap-3 text-sm text-zinc-400">
                     <span className="text-accent">▸</span>
-                    {a}
+                    <div>
+                      <p>{a.text}</p>
+                      <div className="mt-2 flex flex-wrap items-center gap-1.5">
+                        <span className="mr-1 text-xs tracking-widest text-zinc-500 uppercase">Stack</span>
+                        {a.stack.map((s) => (
+                          <Tag key={s}>{s}</Tag>
+                        ))}
+                      </div>
+                    </div>
                   </li>
                 ))}
               </ul>
@@ -69,11 +79,17 @@ export default function AboutPage() {
 
       {/* Skills */}
       <section className="mt-16">
-        <h2 className="mb-6 font-display text-2xl font-bold sm:text-3xl">ทักษะ</h2>
+        <h2 className="mb-6 font-display text-2xl font-bold sm:text-3xl">Skills</h2>
         <div className="grid gap-4 sm:grid-cols-2">
           {skills.map((s) => (
-            <div key={s.group} className="rounded-2xl border border-zinc-800 bg-zinc-900/50 p-5">
-              <h3 className="mb-3 text-xs tracking-widest text-zinc-500 uppercase">{s.group}</h3>
+            <div
+              key={s.group}
+              className="rounded-2xl border border-zinc-800 bg-zinc-900/50 p-5 transition hover:border-zinc-600"
+            >
+              <div className="mb-4 flex items-center gap-3">
+                <Badge icon={s.icon} className="h-12 w-12 shrink-0 drop-shadow-lg" />
+                <h3 className="font-display text-lg font-semibold">{s.group}</h3>
+              </div>
               <div className="flex flex-wrap gap-2">
                 {s.items.map((item) => (
                   <span key={item} className="rounded-lg bg-zinc-800 px-3 py-1 text-sm text-zinc-200">
@@ -86,30 +102,57 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Education & certs */}
-      <section className="mt-16 grid gap-10 md:grid-cols-2">
-        <div>
-          <h2 className="mb-6 font-display text-2xl font-bold">การศึกษา</h2>
+      {/* Education */}
+      <section className="mt-16">
+        <h2 className="mb-6 font-display text-2xl font-bold sm:text-3xl">Education</h2>
+        <div className="grid gap-6 md:grid-cols-3">
           {education.map((ed) => (
-            <div key={ed.school} className="rounded-2xl border border-zinc-800 p-5">
-              <h3 className="font-semibold">{ed.degree}</h3>
-              <p className="text-zinc-400">{ed.school}</p>
-              <p className="mt-1 text-sm text-zinc-500">{ed.period}</p>
-              {ed.note && <p className="mt-2 text-sm text-zinc-400">{ed.note}</p>}
-            </div>
+            <article key={ed.school} className="flex flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/50">
+              {ed.image && (
+                <figure className="relative">
+                  <img
+                    src={ed.image.src}
+                    alt={ed.school}
+                    loading="lazy"
+                    className="aspect-[4/3] w-full object-cover"
+                  />
+                  <figcaption className="absolute right-2 bottom-2 rounded bg-black/60 px-1.5 py-0.5 text-[10px] text-zinc-300">
+                    Photo:{" "}
+                    <a href={ed.image.creditUrl} target="_blank" rel="noreferrer" className="underline hover:text-white">
+                      {ed.image.credit}
+                    </a>
+                  </figcaption>
+                </figure>
+              )}
+              <div className="flex flex-1 flex-col p-5">
+                <p className="text-xs text-accent">{ed.period}</p>
+                <h3 className="mt-1 font-display text-lg font-semibold">{ed.degree}</h3>
+                <p className="text-sm text-zinc-400">{ed.school}</p>
+                {ed.note && <p className="mt-3 text-sm text-zinc-500">{ed.note}</p>}
+              </div>
+            </article>
           ))}
         </div>
-        <div>
-          <h2 className="mb-6 font-display text-2xl font-bold">Certifications</h2>
-          <ul className="space-y-3">
-            {certifications.map((c) => (
-              <li key={c} className="flex items-center gap-3 rounded-2xl border border-zinc-800 p-4 text-sm">
-                <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-accent/15 text-accent">✓</span>
-                {c}
-              </li>
-            ))}
-          </ul>
-        </div>
+      </section>
+
+      {/* Awards & training */}
+      <section className="mt-16">
+        <h2 className="mb-6 font-display text-2xl font-bold sm:text-3xl">Awards & Training</h2>
+        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {awards.map((a) => (
+            <li
+              key={a.title}
+              className="flex items-center gap-4 rounded-2xl border border-zinc-800 bg-zinc-900/50 p-4 transition hover:border-zinc-600"
+            >
+              <Badge icon={a.icon} className="h-14 w-14 shrink-0 drop-shadow-lg" />
+              <div>
+                <p className="text-[11px] tracking-widest text-zinc-500 uppercase">{a.kind}</p>
+                <h3 className="font-semibold leading-snug">{a.title}</h3>
+                <p className="text-sm text-zinc-400">{a.issuer}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
       </section>
     </div>
   );

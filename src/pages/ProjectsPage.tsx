@@ -44,7 +44,7 @@ export default function ProjectsPage() {
     <div className="mx-auto max-w-6xl px-5 py-14">
       <header className="mb-10">
         <h1 className="font-display text-4xl font-bold sm:text-5xl">Browse Projects</h1>
-        <p className="mt-3 text-zinc-400">รวมผลงานทั้งหมด {projects.length} ชิ้น ค้นหาและกรองตามหมวดหมู่หรือเทคโนโลยีได้</p>
+        <p className="mt-3 text-zinc-400">All {projects.length} projects. Search, or filter by category or technology.</p>
       </header>
 
       {/* Controls */}
@@ -67,7 +67,7 @@ export default function ProjectsPage() {
               type="search"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="ค้นหาชื่อโปรเจกต์ รายละเอียด หรือเทคโนโลยี..."
+              placeholder="Search by name, description or technology..."
               className="w-full rounded-xl border border-zinc-800 bg-zinc-900 py-3 pr-4 pl-11 text-sm outline-none placeholder:text-zinc-500 focus:border-accent"
             />
           </div>
@@ -76,16 +76,16 @@ export default function ProjectsPage() {
             onChange={(e) => setSort(e.target.value as SortKey)}
             className="rounded-xl border border-zinc-800 bg-zinc-900 px-4 py-3 text-sm outline-none focus:border-accent"
           >
-            <option value="newest">ใหม่ล่าสุด</option>
-            <option value="oldest">เก่าสุด</option>
-            <option value="az">ชื่อ A–Z</option>
+            <option value="newest">Newest</option>
+            <option value="oldest">Oldest</option>
+            <option value="az">Name A–Z</option>
           </select>
         </div>
 
         <div className="flex flex-wrap gap-2">
           {(["All", ...categories] as const).map((c) => (
             <button key={c} type="button" className={pill(category === c)} onClick={() => setCategory(c)}>
-              {c === "All" ? "ทั้งหมด" : c}
+              {c === "All" ? "All" : c}
             </button>
           ))}
         </div>
@@ -110,7 +110,7 @@ export default function ProjectsPage() {
       </div>
 
       <div className="mb-5 flex items-center justify-between text-sm text-zinc-500">
-        <span>พบ {filtered.length} โปรเจกต์</span>
+        <span>{filtered.length} {filtered.length === 1 ? "project" : "projects"}</span>
         {hasFilters && (
           <button
             type="button"
@@ -121,7 +121,7 @@ export default function ProjectsPage() {
               setTag(null);
             }}
           >
-            ล้างตัวกรอง
+            Clear filters
           </button>
         )}
       </div>
@@ -134,7 +134,7 @@ export default function ProjectsPage() {
         </div>
       ) : (
         <div className="rounded-2xl border border-dashed border-zinc-800 py-20 text-center text-zinc-500">
-          ไม่พบโปรเจกต์ที่ตรงกับเงื่อนไข ลองเปลี่ยนคำค้นหาดูครับ
+          No projects match. Try a different search.
         </div>
       )}
     </div>

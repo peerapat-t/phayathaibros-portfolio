@@ -20,7 +20,7 @@ export default function ProjectDetail({ slug, children }: { slug: string; childr
   return (
     <article className="mx-auto max-w-5xl px-5 py-12">
       <Link to="/projects" className="text-sm text-zinc-400 hover:text-zinc-100">
-        ← กลับไปหน้ารวมผลงาน
+        ← Back to all projects
       </Link>
 
       <header className="mt-6 mb-8">
@@ -40,11 +40,11 @@ export default function ProjectDetail({ slug, children }: { slug: string; childr
       <div className="mt-10 grid gap-10 lg:grid-cols-3">
         <div className="space-y-10 lg:col-span-2">
           <section>
-            <h2 className="mb-3 font-display text-xl font-semibold">ภาพรวม</h2>
+            <h2 className="mb-3 font-display text-xl font-semibold">Overview</h2>
             <p className="leading-relaxed text-zinc-300">{project.description}</p>
           </section>
           <section>
-            <h2 className="mb-3 font-display text-xl font-semibold">จุดเด่น</h2>
+            <h2 className="mb-3 font-display text-xl font-semibold">Highlights</h2>
             <ul className="space-y-2">
               {project.highlights.map((h) => (
                 <li key={h} className="flex gap-3 text-zinc-300">
@@ -83,7 +83,7 @@ export default function ProjectDetail({ slug, children }: { slug: string; childr
                   href={project.links.live}
                   className="rounded-full bg-accent py-2.5 text-center text-sm font-semibold text-zinc-950 hover:brightness-110"
                 >
-                  ดูเว็บไซต์จริง ↗
+                  Visit live site ↗
                 </a>
               )}
               {project.links.repo && (
@@ -101,7 +101,7 @@ export default function ProjectDetail({ slug, children }: { slug: string; childr
 
       {related.length > 0 && (
         <section className="mt-16 border-t border-zinc-800 pt-10">
-          <h2 className="mb-6 font-display text-2xl font-bold">ผลงานที่คล้ายกัน</h2>
+          <h2 className="mb-6 font-display text-2xl font-bold">Related projects</h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((p) => (
               <ProjectCard key={p.slug} project={p} />
@@ -127,7 +127,7 @@ export function Section({ title, children }: { title: string; children: ReactNod
 export function Gallery({ captions }: { captions: string[] }) {
   return (
     <section>
-      <h2 className="mb-3 font-display text-xl font-semibold">ภาพหน้าจอ</h2>
+      <h2 className="mb-3 font-display text-xl font-semibold">Screenshots</h2>
       <div className="grid gap-4 sm:grid-cols-2">
         {captions.map((c) => (
           <figure key={c}>

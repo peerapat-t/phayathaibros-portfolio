@@ -43,7 +43,7 @@ export default function Layout() {
             type="button"
             className="rounded-lg p-2 text-zinc-300 hover:bg-zinc-800 sm:hidden"
             onClick={() => setOpen((v) => !v)}
-            aria-label="เปิดเมนู"
+            aria-label="Toggle menu"
             aria-expanded={open}
           >
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -69,7 +69,7 @@ export default function Layout() {
 
       <footer className="border-t border-zinc-800">
         <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-8 text-sm text-zinc-500 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} {profile.name} · สร้างด้วย TypeScript + Tailwind CSS</p>
+          <p>© {new Date().getFullYear()} {profile.name} · Built with React, TypeScript & Tailwind CSS</p>
           <div className="flex gap-5">
             {profile.socials.map((s) => (
               <a key={s.label} href={s.href} className="hover:text-zinc-100">

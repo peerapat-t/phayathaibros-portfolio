@@ -1,86 +1,120 @@
-import type { Education, Experience } from "./types";
+import type { Award, Education, Experience, Skill } from "./types";
 
 export const profile = {
   name: "Peerapat T.",
-  nameTh: "พีรพัฒน์",
-  title: "Full-stack Developer",
-  location: "กรุงเทพฯ, ประเทศไทย",
-  email: "hello@example.com",
+  nameShort: "Peerapat",
+  title: "Data Scientist",
+  location: "Phayathai, Bangkok",
+  email: "peerapat.tcr@gmail.com",
   intro:
-    "นักพัฒนาซอฟต์แวร์ที่ชอบสร้างของที่คนใช้งานจริง ทำงานทั้งฝั่ง frontend และ backend มากว่า 6 ปี สนใจเป็นพิเศษเรื่อง product ที่แก้ปัญหาให้ธุรกิจและชุมชนในประเทศไทย",
+    "I work with data in asset management by day, and build small web apps and games on the side. This is where I share the things I make for fun.",
   bio: [
-    "ผมเริ่มเขียนโปรแกรมตั้งแต่สมัยมัธยมจากการทำเว็บให้ชมรม จนได้เรียนต่อด้านวิศวกรรมคอมพิวเตอร์ และเข้าสู่วงการ startup ตั้งแต่ปีแรกหลังจบ",
-    "ตลอดหลายปีที่ผ่านมาได้ทำงานกับทีมหลากหลายขนาด ตั้งแต่ทีม 3 คนที่ต้องทำทุกอย่างเอง ไปจนถึงองค์กรที่มีวิศวกรหลายร้อยคน ทำให้เข้าใจทั้งการ ship ให้เร็วและการดูแลระบบให้มั่นคงในระยะยาว",
-    "นอกเวลางานชอบทำ open source เล็ก ๆ ที่ช่วยนักพัฒนาไทย ถ่ายภาพ street และปั่นจักรยานรอบกรุงเทพฯ",
+    "I studied economics for both my bachelor's and master's degrees, so I like to start from the business problem before touching the data.",
+    "I began my career as a researcher at TDRI, working on spatial analysis for transport policy. I then joined the Corporate Strategy team at Kasikorn Asset Management, where I build dashboards, predictive models and customer segmentation for the sales and marketing teams.",
+    "I'm now studying for an M.Sc. in Business Data Science at KMITL on a KMITL & KBTG scholarship. In my spare time I build web apps to learn how to turn ideas and models into things people can use.",
   ],
   stats: [
-    { label: "ปีประสบการณ์", value: "6+" },
-    { label: "โปรเจกต์ที่ส่งมอบ", value: "40+" },
-    { label: "ผู้ใช้งานรวม", value: "250K" },
+    { label: "Years working with data", value: "6+" },
+    { label: "Side projects", value: "4" },
+    { label: "Awards & hackathons", value: "3" },
   ],
   socials: [
-    { label: "GitHub", href: "#" },
+    { label: "GitHub", href: "https://github.com/peerapat-t" },
     { label: "LinkedIn", href: "#" },
-    { label: "X / Twitter", href: "#" },
+    { label: "Email", href: "mailto:peerapat.tcr@gmail.com" },
   ],
 };
 
-export const skills: { group: string; items: string[] }[] = [
-  { group: "Frontend", items: ["TypeScript", "React", "Next.js", "Vue", "Tailwind CSS", "React Native"] },
-  { group: "Backend", items: ["Node.js", "Go", "Python", "PostgreSQL", "Redis", "Kafka"] },
-  { group: "DevOps", items: ["Docker", "Kubernetes", "AWS", "GCP", "GitHub Actions", "Terraform"] },
-  { group: "Other", items: ["Figma", "System Design", "LLM Integration", "Technical Writing"] },
+export const skills: Skill[] = [
+  { group: "Data & Analytics", icon: "chart", items: ["SQL", "Python", "pandas", "Power BI", "QGIS"] },
+  { group: "Machine Learning", icon: "network", items: ["scikit-learn", "LightGBM", "K-Means", "Decision Tree", "Matrix Factorization"] },
+  { group: "LLM & Automation", icon: "sparkle", items: ["LLM API", "Web Scraping", "Selenium"] },
+  { group: "Web Dev (learning)", icon: "code", items: ["TypeScript", "React", "Vite", "Tailwind CSS", "Docker"] },
 ];
 
 export const experiences: Experience[] = [
   {
-    company: "Siam Commerce Tech",
-    role: "Senior Full-stack Engineer",
-    period: "2024 — ปัจจุบัน",
-    location: "กรุงเทพฯ (Hybrid)",
-    summary: "ดูแลทีม checkout และ payment ของแพลตฟอร์ม e-commerce ที่มีผู้ใช้หลายล้านคน",
+    company: "Kasikorn Asset Management",
+    role: "Manager, Corporate Strategy",
+    period: "Jul 2020 — Present",
+    location: "Bangkok",
+    summary:
+      "Apply data analytics and machine learning to improve customer experience, sales and marketing for mutual funds and provident funds.",
     achievements: [
-      "นำทีม 5 คนย้ายระบบ checkout จาก monolith ไป microservices",
-      "เพิ่ม conversion rate ของหน้าชำระเงิน 12%",
-      "วางมาตรฐาน code review และ mentoring วิศวกรรุ่นใหม่",
+      {
+        text: "Customer Tracking Dashboard that combines data from multiple products so the sales team can follow customers in real time",
+        stack: ["SQL", "Python", "Power BI"],
+      },
+      {
+        text: "In-depth analyses of mutual fund and provident fund topics to tailor communication and marketing strategies",
+        stack: ["SQL", "Python", "Power BI"],
+      },
+      {
+        text: "Social Listening Dashboard that uses web scraping and an LLM API to track customer sentiment and needs",
+        stack: ["Python", "Selenium", "LLM API", "Power BI"],
+      },
+      {
+        text: "Predictive model for tax-saving funds, used for upselling and customer acquisition",
+        stack: ["SQL", "Python", "LightGBM", "Decision Tree"],
+      },
+      {
+        text: "Clustering model for customer segmentation based on behaviour, preferences and purchasing patterns",
+        stack: ["SQL", "Python", "K-Means"],
+      },
     ],
   },
   {
-    company: "Kanom Labs",
-    role: "Full-stack Developer",
-    period: "2021 — 2024",
-    location: "เชียงใหม่ / Remote",
-    summary: "Software house ขนาดเล็กที่รับพัฒนาเว็บและแอปให้ลูกค้าทั้งไทยและต่างประเทศ",
+    company: "Thailand Development Research Institute (TDRI)",
+    role: "Researcher",
+    period: "Nov 2018 — Jun 2022",
+    location: "Bangkok",
+    summary: "Public policy research with a focus on spatial data analysis.",
     achievements: [
-      "ส่งมอบโปรเจกต์ลูกค้ากว่า 20 โปรเจกต์",
-      "สร้าง internal starter kit ที่ลดเวลาเริ่มโปรเจกต์ใหม่จาก 2 สัปดาห์เหลือ 2 วัน",
-      "ดูแล infrastructure บน AWS ของลูกค้า 8 ราย",
-    ],
-  },
-  {
-    company: "StartBKK",
-    role: "Junior Developer",
-    period: "2019 — 2021",
-    location: "กรุงเทพฯ",
-    summary: "Startup ด้าน HR tech ช่วงระดมทุน Series A",
-    achievements: [
-      "พัฒนาระบบลงเวลาทำงานผ่านมือถือด้วย geofencing",
-      "เขียน test อัตโนมัติจน coverage เพิ่มจาก 20% เป็น 75%",
+      { text: "Analysed bus accessibility across Thailand using spatial data", stack: ["Python", "QGIS"] },
     ],
   },
 ];
 
 export const education: Education[] = [
   {
-    school: "มหาวิทยาลัยตัวอย่าง",
-    degree: "วศ.บ. วิศวกรรมคอมพิวเตอร์",
-    period: "2015 — 2019",
-    note: "เกียรตินิยมอันดับ 2 · ประธานชมรมโปรแกรมมิ่ง",
+    school: "King Mongkut's Institute of Technology Ladkrabang",
+    degree: "M.Sc. Business Data Science",
+    period: "Nov 2024 — Present",
+    note: "Full scholarship from KMITL & KBTG (research program) · Thesis proposal: Hybrid Matrix Factorization for Financial Asset Recommendation",
+    image: {
+      src: "/images/education/kmitl.jpg",
+      credit: "Adirach Toumlamoon, CC BY-SA 4.0",
+      creditUrl: "https://commons.wikimedia.org/wiki/File:Bunnag_Building_KMITL_in_2023.jpg",
+    },
+  },
+  {
+    school: "Thammasat University",
+    degree: "M.A. Economics",
+    period: "Graduated Aug 2023",
+    note: "GPA 3.97 · Thesis: Taxation Optimization to Control Air Pollution from Automobile",
+    image: {
+      src: "/images/education/thammasat.jpg",
+      credit: "ScorpianPK, CC BY-SA 3.0",
+      creditUrl: "https://commons.wikimedia.org/wiki/File:Dome_of_Thammasat_University.jpg",
+    },
+  },
+  {
+    school: "Srinakharinwirot University",
+    degree: "B.A. Economics",
+    period: "Graduated May 2018",
+    note: "GPA 3.65, first-class honours · Top 10 team in the Economics Phetyot Mongkut National Competition",
+    image: {
+      src: "/images/education/swu.jpg",
+      credit: "Chainwit., CC BY-SA 4.0",
+      creditUrl: "https://commons.wikimedia.org/wiki/File:Srinakharinwirot_University_Bangkok.jpg",
+    },
   },
 ];
 
-export const certifications = [
-  "AWS Certified Solutions Architect – Associate",
-  "Google Professional Cloud Developer",
-  "Certified Kubernetes Application Developer (CKAD)",
+export const awards: Award[] = [
+  { title: "Winner — M.A.D Data Science Hackathon", issuer: "KBTG", kind: "Hackathon", icon: "trophy" },
+  { title: "K Heroes 2023", issuer: "KASIKORNBANK", kind: "Award", icon: "medal" },
+  { title: "K Star 2023", issuer: "Kasikorn Asset Management", kind: "Award", icon: "star" },
+  { title: "SQL & Machine Learning", issuer: "DataCamp", kind: "Training", icon: "course" },
+  { title: "Social Listening", issuer: "MANDALA", kind: "Training", icon: "listening" },
 ];
