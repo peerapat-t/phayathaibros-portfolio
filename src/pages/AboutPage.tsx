@@ -43,11 +43,10 @@ export default function AboutPage() {
             <li key={`${exp.company}-${exp.role}`} className="relative">
               <span className="absolute top-1.5 -left-[37px] h-3 w-3 rounded-full border-2 border-zinc-950 bg-accent" />
               <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-                <h3 className="font-display text-xl font-semibold">
-                  {exp.role} <span className="text-zinc-500">@ {exp.company}</span>
-                </h3>
+                <h3 className="font-display text-xl font-semibold">{exp.role}</h3>
                 <span className="shrink-0 text-sm text-zinc-500">{exp.period}</span>
               </div>
+              <p className="text-zinc-400">{exp.company}</p>
               <p className="text-sm text-zinc-500">{exp.location}</p>
               <p className="mt-2 text-zinc-300">{exp.summary}</p>
               <ul className="mt-4 space-y-4">

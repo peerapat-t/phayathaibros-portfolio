@@ -13,7 +13,7 @@ export const profile = {
     "Most of my work starts with a business question — who the sales team should call, what customers actually respond to, which process is quietly eating everyone's afternoon — and works backwards to the data. These days that often means putting an LLM somewhere in the middle of it.",
   interestsLabel: "A few things I'm into at the moment:",
   bio: [
-    "I studied economics for both my bachelor's and master's degrees, which is probably why I tend to start from the business question before opening a notebook.",
+    "Economics for my bachelor's and master's degrees, then a second master's in business data science and a lot of AI training since. The economics part is probably why I start from the business question.",
     "I started out as a researcher at TDRI doing spatial analysis for transport policy, and later joined Kasikorn Asset Management, where I moved from marketing analytics into data science and now work on the company's AI transformation.",
     "Working in asset management also means I have picked up a fair bit about the products themselves: mutual funds, provident funds, equities and the tax-saving funds people buy at the end of the year. It helps when the data question is really a product question.",
     "I'm currently studying for an M.Sc. in Business Data Science at KMITL, looking at recommender systems for financial assets. On the side I build small projects, mostly as an excuse to learn how to get a model out of a notebook and in front of someone.",
@@ -34,7 +34,11 @@ export const profile = {
 export const skills: Skill[] = [
   { group: "Data & Analytics", icon: "chart", items: ["SQL", "Python", "pandas", "Power BI", "QGIS"] },
   { group: "Machine Learning", icon: "network", items: ["scikit-learn", "LightGBM", "K-Means", "Decision Tree", "Matrix Factorization"] },
-  { group: "LLM & Automation", icon: "sparkle", items: ["LLM API", "Web Scraping", "Selenium"] },
+  {
+    group: "LLM & Automation",
+    icon: "sparkle",
+    items: ["LLM API", "LangChain", "LangGraph", "Langfuse", "Web Scraping", "Selenium"],
+  },
   {
     group: "Financial Products",
     icon: "fund",
@@ -77,7 +81,7 @@ export const experiences: Experience[] = [
     summary: "Built models and dashboards for the sales and marketing teams on mutual funds and provident funds.",
     achievements: [
       {
-        text: "Social Listening Dashboard that uses web scraping and an LLM API to track customer sentiment and needs",
+        text: "Social Listening Dashboard that uses web scraping and an LLM API to track customer sentiment and needs on our Facebook page",
         stack: ["Python", "Selenium", "LLM API", "Power BI"],
       },
       {
@@ -163,7 +167,13 @@ export const education: Education[] = [
 export const awards: Award[] = [
   { title: "Winner — M.A.D Data Science Hackathon", issuer: "KBTG", kind: "Hackathon", icon: "trophy" },
   { title: "K Heroes 2023", issuer: "KASIKORNBANK", kind: "Award", icon: "medal" },
-  { title: "K Star 2023", issuer: "Kasikorn Asset Management", kind: "Award", icon: "star" },
+  {
+    title: "K Star 2023",
+    issuer: "Kasikorn Asset Management",
+    kind: "Award",
+    icon: "star",
+    image: { src: "/images/awards/k-star-2023.jpg", caption: "KA Star Awards 2023 ceremony" },
+  },
   { title: "SQL & Machine Learning", issuer: "DataCamp", kind: "Training", icon: "course" },
   { title: "Social Listening", issuer: "MANDALA", kind: "Training", icon: "listening" },
 ];
