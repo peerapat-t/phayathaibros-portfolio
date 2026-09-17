@@ -54,10 +54,10 @@ export const experiences: Experience[] = [
     period: "2025 — Present",
     location: "Bangkok",
     summary:
-      "Work on the company's AI transformation, turning internal processes into something an LLM can help with. One AI engineer reports to me.",
+      "Work on the company's AI transformation, turning internal processes into something an LLM can help with.",
     achievements: [
       {
-        text: "Co-lead of the AI transformation project, covering tech stack selection, project feasibility and governance",
+        text: "Lead the AI transformation development project, covering tech stack selection, project feasibility and governance, with one AI engineer reporting to me",
       },
       {
         text: "Automated the KYC process: AI that checks the background of new account openings and summarises the customer risk profile",
